@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Create Discount">
+        <lightning-input type="text" label="Disocunt Name" value={discountName} onchange={handleNameChange}></lightning-input>
+        <lightning-input type="text" label="Discount Percentage" value={discountPercentage} onchange={handlePercentChange}></lightning-input>
+        <lightning-record-picker
+    label="Opportunity"
+    placeholder="Search Opportunity..."
+    object-api-name="Opportunity"
+    onchange={handleOppChange}
+>
+</lightning-record-picker>
+        <lightning-button label="Create Discount" variant="brand" onclick={handleBtnClick}></lightning-button>
+    </lightning-card>
+</template>
