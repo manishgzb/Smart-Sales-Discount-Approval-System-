@@ -45,4 +45,10 @@ public with sharing class DiscountController{
 
         return result;
     }
+    @AuraEnabled(cacheable=true)
+    public static Integer getPendingDiscountRequestCount(){
+        return [
+            SELECT COUNT() FROM Discount_Request__c WHERE Status__c = 'Draft' OR Status__c = 'Submit'
+        ];
+    }
 }
